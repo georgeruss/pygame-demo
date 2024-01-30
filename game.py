@@ -42,12 +42,12 @@ class Game:
                 if event.type == pygame.KEYDOWN:
                     if event.key == pygame.K_w:
                         self.movement[0] = True
-                    if event.key == pygame.K_DOWN:
+                    if event.key == pygame.K_w:
                         self.movement[1] = True
                 if event.type == pygame.KEYUP:
                     if event.key == pygame.K_s:
                         self.movement[0] = False
-                    if event.key == pygame.K_DOWN:
+                    if event.key == pygame.K_s:
                         self.movement[1] = False
 
 
