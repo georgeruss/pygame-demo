@@ -43,6 +43,8 @@ class Game:
             self.display.fill((14, 219, 248))
 
             self.scroll[0] += (self.player.rect().centerx - self.display.get_width() / 2 - self.scroll[0]) / 30
+            self.scroll[1] += (self.player.rect().centerx - self.display.get_width() / 2 - self.scroll[1]) / 30
+
 
             self.tilemap.render(self.display, offset=self.scroll)
 
