@@ -87,17 +87,13 @@ class Game:
                         self.movement[1] = True
                     #if event.key == pygame.K_w:
                     #    self.player.velocity[1] = -3
-                    if event.key == pygame.K_SPACE:
+                    if event.key == pygame.K_w:
                         self.player.velocity[1] = -3         
                 if event.type == pygame.KEYUP:
                     if event.key == pygame.K_a:
                         self.movement[0] = False
                     if event.key == pygame.K_d:
-                        self.movement[1] = False
-                    #if event.key == pygame.K_w:
-                    #    self.player.velocity[1] = 0
-                    if event.key == pygame.K_SPACE:
-                        self.player.velocity[1] = 0      
+                        self.movement[1] = False     
 
             self.screen.blit(pygame.transform.scale(self.display, self.screen.get_size()), (0, 0))
             pygame.display.update()
