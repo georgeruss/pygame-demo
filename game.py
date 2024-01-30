@@ -31,10 +31,10 @@ class Game:
             'stone'  : load_images('tiles/stone'),
             'player' : load_image('entities/player.png'),
             'background' : load_image('background.png'),
-            'clouds' : load_image('clouds')
+            'clouds' : load_images('clouds')
         }
 
-        self.clouds = Cloud(self.assets['clouds'], count=16)
+        self.clouds = Clouds(self.assets['clouds'], count=16)
 
         self.player = PhysicsEntity(self, 'player', (50, 50), (8, 15))
 
