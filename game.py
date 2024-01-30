@@ -48,9 +48,9 @@ class Game:
             self.display.fill((14, 219, 248))
 
             self.scroll[0] += (self.player.rect().centerx - self.display.get_width() / 2 - self.scroll[0]) / 30
-            self.scroll[1] += (self.player.rect().centerx - self.display.get_height() / 2 - self.scroll[1]) / 30
+            self.scroll[1] += (self.player.rect().centery - self.display.get_height() / 2 - self.scroll[1]) / 30
 
-            render_scroll = (int(self.scroll[0]), (self.scroll[1]))
+            render_scroll = (int(self.scroll[0]), int(self.scroll[1]))
 
             self.clouds.update()
             self.clouds.render(self.display, offset=render_scroll)
