@@ -1,5 +1,7 @@
 import pygame
 import sys
+
+from scripts.utilities import load_image
 from scripts.entities import PhysicsEntity
 
 class Game:
@@ -18,7 +20,11 @@ class Game:
 
         self.collision_area = pygame.Rect(50, 50, 300, 50)
 
-        self.player = PhysicsEntity(self, 'Monica', (50, 50), (8, 15))
+        self.assets = {
+            'player' : load_image('entities/player.png')
+        }
+
+        self.player = PhysicsEntity(self, 'player', (50, 50), (8, 15))
 
     # run game function
     def run(self):
