@@ -39,7 +39,7 @@ class Game:
                         self.movement[1] = False
 
                 # WASD keys
-                if event.type == pygame.UP:
+                if event.type == pygame.KEYDOWN:
                     if event.key == pygame.K_w:
                         self.movement[0] = True
                     if event.key == pygame.K_DOWN:
