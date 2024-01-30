@@ -2,6 +2,7 @@ import pygame
 import sys
 
 from scripts.utilities import load_image
+from scripts.utilities import load_images
 from scripts.entities import PhysicsEntity
 
 class Game:
@@ -23,6 +24,7 @@ class Game:
         self.collision_area = pygame.Rect(50, 50, 300, 50)
 
         self.assets = {
+            'decor'  : load_images('tiles/decor'),
             'player' : load_image('entities/player.png')
         }
 
