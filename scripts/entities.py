@@ -9,7 +9,11 @@ class PhysicsEntity:
       self.pos = list(pos)
       self.size = size
       self.velocity = [0, 0]  
-      
+      self.collisions = {'up': False, 'down': False, 'false': False, 'left': False}
+
+      self.action = ''
+      self.anim_offset = (-3, -3)
+
    def rect(self):
       return pygame.Rect(self.pos[0], self.pos[1], self.size[0], self.size[1])
 
