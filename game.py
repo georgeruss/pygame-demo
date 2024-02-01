@@ -41,7 +41,7 @@ class Game:
             'player/jump' : Animation(load_images('entities/player/jump'), img_dur=5),
             'player/slide' : Animation(load_images('entities/player/slide'), img_dur=5),
             'player/wall_slide' : Animation(load_images('entities/player/wall_slide'), img_dur=5),
-            'particle/leaf' : Animation(load_images('particles/leaf'), img_dur=20, loop=False),
+            'particles/leaf' : Animation(load_images('particles/leaf'), img_dur=20, loop=False),
         }
 
         self.clouds = Clouds(self.assets['clouds'], count=16)
