@@ -4,7 +4,7 @@ class Particle:
         self.type = p_type
         self.pos = list(pos)
         self.velocity = list(velocity)
-        self.animation = self.game.assets['particle/' + p_type].copy()
+        self.animation = self.game.assets['particles/' + p_type].copy()
         self.animation.frame = frame
     
     def update(self):
