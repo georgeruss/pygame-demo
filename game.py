@@ -106,7 +106,7 @@ class Game:
                         self.player.velocity[1] = -3
                     if event.key == pygame.K_ESCAPE:
                         sys.exit()  
-                    if event.key == pygame.K_r:
+                    if event.key == pygame.K_r: # r to reset game to beginning
                         Game().run()
                 if event.type == pygame.KEYUP:
                     if event.key == pygame.K_LEFT:

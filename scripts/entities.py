@@ -90,7 +90,7 @@ class Player(PhysicsEntity):
 
    def jump(self):
       if self.jumps:
-         self.jumps[1] = -3   
+         self.velocity[1] = -3   
          self.jumps -= 1
          self.air_time = 5 
       
