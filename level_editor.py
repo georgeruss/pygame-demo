@@ -124,6 +124,8 @@ class Editor:
                         self.on_grid = not self.on_grid
                     if event.key == pygame.K_LSHIFT or pygame.K_RSHIFT: # Shift to cycle
                         self.shift = True
+                    if event.key == pygame.K_t:
+                        self.tilemap.autotile()
                     if event.key == pygame.K_s and pygame.K_LCTRL: # ctrl + s to save
                         self.tilemap.save('map.json')         
                 if event.type == pygame.KEYUP:
