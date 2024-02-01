@@ -93,4 +93,6 @@ class Player(PhysicsEntity):
          self.velocity[1] = -3   
          self.jumps -= 1
          self.air_time = 5 
-      
+
+   def wall_slide(self):
+      pass      
