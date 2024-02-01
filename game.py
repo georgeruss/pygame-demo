@@ -15,7 +15,7 @@ class Game:
     def __init__(self):
         pygame.init()
         pygame.display.set_caption('pygame platformer demo - George Landyn Russell')
-        self.screen = pygame.display.set_mode((640, 480))
+        self.screen = pygame.display.set_mode((1920, 1080))
         self.display = pygame.Surface((320, 240))
 
         self.clock = pygame.time.Clock()
