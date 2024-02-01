@@ -15,7 +15,7 @@ class Game:
     def __init__(self):
         pygame.init()
         pygame.display.set_caption('pygame platformer demo - George Landyn Russell')
-        self.screen = pygame.display.set_mode((1920, 1080))
+        self.screen = pygame.display.set_mode((640, 480))
         self.display = pygame.Surface((320, 240))
 
         self.clock = pygame.time.Clock()
@@ -49,7 +49,9 @@ class Game:
         self.player = Player(self, (50, 50), (8, 15))
 
         self.tilemap = Tilemap(self, tile_size=16)
-    
+
+        self.tilemap.load('map.json')
+
         self.scroll = [0,0]
 
         self.leaf_spawners = []
@@ -57,8 +59,6 @@ class Game:
             self.leaf_spawners.append(pygame.Rect(4 + tree['pos'][0], 4 + tree['pos'][1], 23, 13))    
         
         self.particles = []
-
-        self.tilemap.load('map.json')
 
     # run game function
     def run(self):
