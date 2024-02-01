@@ -13,8 +13,8 @@ class Particle:
         if self.animation.done:
             kill = True
 
-        self.velocity[0] += self.velocity[0]
-        self.velocity[1] += self.velocity[1]
+        self.pos[0] += self.velocity[0]
+        self.pos[1] += self.velocity[1]
 
         self.animation.update()
 

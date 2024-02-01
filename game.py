@@ -14,7 +14,7 @@ class Game:
     def __init__(self):
         pygame.init()
         pygame.display.set_caption('pygame platformer demo - George Landyn Russell')
-        self.screen = pygame.display.set_mode((1920, 1080))
+        self.screen = pygame.display.set_mode((640, 480))
         self.display = pygame.Surface((320, 240))
 
         self.clock = pygame.time.Clock()
@@ -22,7 +22,7 @@ class Game:
         self.img = pygame.image.load('data/images/clouds/cloud_1.png')
         self.img.set_colorkey((0,0,0))
 
-        self.img_pos = [160, 260]
+        self.img_pos = [160, 260]  
         self.movement = [False, False]
 
         self.collision_area = pygame.Rect(50, 50, 300, 50)
@@ -52,7 +52,7 @@ class Game:
         self.scroll = [0,0]
 
         self.leaf_spawners = []
-        for tree in self.tilemap.extract([('large_decor', 2)], keep=2):
+        for tree in self.tilemap.extract([('large_decor', 2)], keep=True):
             self.leaf_spawners.append(pygame.Rect(4 + tree['pos'][0], 4 + tree['pos'][1], 23, 13))    
         
         self.particles = []
