@@ -115,10 +115,12 @@ class Editor:
                         self.movement[2] = True
                     if event.key == pygame.K_DOWN:
                         self.movement[3] = True  
-                    if event.key == pygame.K_g:
+                    if event.key == pygame.K_g: # change from snapping objects onto grid to offgrid
                         self.on_grid = not self.on_grid
-                    if event.key == pygame.K_LSHIFT or pygame.K_RSHIFT:
-                        self.shift = True         
+                    if event.key == pygame.K_LSHIFT or pygame.K_RSHIFT: # Shift to cycle
+                        self.shift = True
+                    if event.key == pygame.K_s and pygame.K_LCTRL: # ctrl + s to save
+                        self.tilemap.save('map.json')         
                 if event.type == pygame.KEYUP:
                     if event.key == pygame.K_LEFT:
                         self.movement[0] = False
