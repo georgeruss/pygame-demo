@@ -34,7 +34,7 @@ class Game:
             'large_decor'  : load_images('tiles/large_decor'),
             'stone'  : load_images('tiles/stone'),
             'player' : load_image('entities/player.png'),
-            'background' : load_image('background3.jpg'),
+            'background' : load_image('background2.png'),
             'clouds' : load_images('clouds'),
             'player/idle' : Animation(load_images('entities/player/idle'), img_dur=6),
             'player/run' : Animation(load_images('entities/player/run'), img_dur=4),
