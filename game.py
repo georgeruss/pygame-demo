@@ -15,7 +15,7 @@ class Game:
     def __init__(self):
         pygame.init()
         pygame.display.set_caption('pygame platformer demo - George Landyn Russell')
-        self.screen = pygame.display.set_mode((640, 480))
+        self.screen = pygame.display.set_mode((720, 480))
         self.display = pygame.Surface((320, 240))
 
         self.clock = pygame.time.Clock()
@@ -41,7 +41,7 @@ class Game:
             'player/jump' : Animation(load_images('entities/player/jump'), img_dur=5),
             'player/slide' : Animation(load_images('entities/player/slide'), img_dur=5),
             'player/wall_slide' : Animation(load_images('entities/player/wall_slide'), img_dur=5),
-            'particles/leaf' : Animation(load_images('particles/leaf'), img_dur=20, loop=False),
+            'particles/leaf' : Animation(load_images('particles/leaf'), img_dur=6, loop=False),
         }
 
         self.clouds = Clouds(self.assets['clouds'], count=16)
@@ -105,7 +105,9 @@ class Game:
                     if event.key == pygame.K_UP:
                         self.player.velocity[1] = -3
                     if event.key == pygame.K_ESCAPE:
-                        sys.exit()    
+                        sys.exit()  
+                    if event.key == pygame.K_r:
+                        Game().run()
                 if event.type == pygame.KEYUP:
                     if event.key == pygame.K_LEFT:
                         self.movement[0] = False
@@ -118,10 +120,8 @@ class Game:
                         self.movement[0] = True
                     if event.key == pygame.K_d:
                         self.movement[1] = True
-                    #if event.key == pygame.K_w:
-                    #    self.player.velocity[1] = -3
                     if event.key == pygame.K_w:
-                        self.player.velocity[1] = -3         
+                        self.player.jump()        
                 if event.type == pygame.KEYUP:
                     if event.key == pygame.K_a:
                         self.movement[0] = False
