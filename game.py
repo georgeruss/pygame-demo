@@ -12,7 +12,7 @@ class Game:
     def __init__(self):
         pygame.init()
         pygame.display.set_caption('pygame platformer demo - George Landyn Russell')
-        self.screen = pygame.display.set_mode((640, 480))
+        self.screen = pygame.display.set_mode((1920, 1080))
         self.display = pygame.Surface((320, 240))
 
         self.clock = pygame.time.Clock()
@@ -86,6 +86,8 @@ class Game:
                         self.movement[1] = True
                     if event.key == pygame.K_UP:
                         self.player.velocity[1] = -3
+                    if event.key == pygame.K_ESCAPE:
+                        sys.exit()    
                 if event.type == pygame.KEYUP:
                     if event.key == pygame.K_LEFT:
                         self.movement[0] = False
