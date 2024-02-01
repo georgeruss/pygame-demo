@@ -48,6 +48,13 @@ class Game:
     
         self.scroll = [0,0]
 
+        self.leaf_spawners = []
+        for tree in self.tilemap.extract([('large_decor', 2)], keep=2):
+            self.leaf_spawners.append(pygame.Rect(4 + tree['pos'][0], 4 + tree['pos'][1], 23, 13))    
+        print(self.leaf_spawners)
+
+        self.tilemap.load('map.json')
+
     # run game function
     def run(self):
         while True:
@@ -62,7 +69,6 @@ class Game:
             self.clouds.render(self.display, offset=render_scroll)
 
             self.tilemap.render(self.display, offset=render_scroll)
-            self.tilemap.load('map.json')
 
             self.player.update(self.tilemap, (self.movement[1] - self.movement[0], 0))
             self.player.render(self.display, offset=self.scroll)
