@@ -8,7 +8,7 @@ class PhysicsEntity:
       self.pos = list(pos)
       self.size = size
       self.velocity = [0, 0]  
-      self.collisions = {'up': False, 'down': False, 'false': False, 'left': False}
+      self.collisions = {'up': False, 'down': False, 'right': False, 'left': False}
 
       self.action = ''
       self.anim_offset = (-3, -3)
@@ -26,7 +26,7 @@ class PhysicsEntity:
          self.animation = self.game.assets[self.type + '/' + self.action].copy()
 
    def update(self, tilemap, movement=(0, 0)):
-      self.collisions = {'up': False, 'down': False, 'false': False, 'left': False}
+      self.collisions = {'up': False, 'down': False, 'right': False, 'left': False}
       frame_movement = (movement[0] + self.velocity[0], movement[1] + self.velocity[1])
 
       self.pos[0] += frame_movement[0]
@@ -127,7 +127,6 @@ class Player(PhysicsEntity):
             self.air_time = 5
             self.jumps = max(0, self.jumps - 1)
             return True
-
       elif self.jumps:
          self.velocity[1] = -3   
          self.jumps -= 1
